@@ -6,7 +6,7 @@
 trigger:
 - master
 
-pool:
+pool: GKE-AsiaEast1-Pool
   demands: 
   - python3
   - agent.name -equals ado-agent-devops-agent-587c6c5684-9bkdg
