@@ -11,6 +11,7 @@ pool:
   demands: 
   - python3
   - azp_pool -equals GKE-AsiaEast1-Pool
+  - agent.version -equals 2.184.2
 strategy:
   matrix:
     Python27:
