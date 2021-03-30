@@ -8,6 +8,7 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
+  demands: AZP_POOL -equals GKE-AsiaEast1-Pool
 strategy:
   matrix:
     Python27:
