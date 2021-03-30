@@ -7,8 +7,6 @@ trigger:
 - master
 
 pool: GKE-AsiaEast1-Pool
-  demands: 
-  - python3
 strategy:
   matrix:
     Python27:
