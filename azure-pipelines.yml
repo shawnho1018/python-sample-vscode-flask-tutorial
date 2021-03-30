@@ -10,6 +10,7 @@ pool:
   vmImage: ubuntu-latest
   demands: 
   - python3
+  - azp_pool -equals GKE-AsiaEast1-Pool
 strategy:
   matrix:
     Python27:
