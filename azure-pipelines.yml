@@ -14,10 +14,16 @@ stages:
   displayName: Just a test stages
   jobs:
   - job: runs_in_container
-    container: ubuntu:18.04
+    container: google/cloud-sdk
     steps: 
-    - script: ls -l 
-    
+    - script: gcloud --help
+- stage: deploy
+  jobs: 
+  - job: curl_gcp
+    container: curlimages/curl
+    steps:
+    - script: curl google.com
+
 #steps:
 #- script: |
 #    apt update -y
