@@ -14,9 +14,9 @@ stages:
   displayName: Just a test stages
   jobs:
   - job: runs_in_container
-    container: google/cloud-sdk
+    container: alpine:latest
     steps: 
-    - script: gcloud --help
+    - script: ls -la 
 - stage: deploy
   jobs: 
   - job: curl_gcp
