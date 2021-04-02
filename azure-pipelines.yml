@@ -6,24 +6,26 @@
 trigger:
 - master
 
+resources:
+  containers:
+  - container: my_container
+    image: buildpack-deps:focal
+  - container: nginx
+    image: nginx
 pool: 
   GKE-AsiaEast1-Pool
+container: my_container
+services:
+  nginx: nginx
 
-stages:
-- stage: Test
-  displayName: Just a test stages
-  jobs:
-  - job: runs_in_container
-    container: alpine:latest
-    steps: 
-    - script: ls -la 
-- stage: deploy
-  jobs: 
-  - job: curl_gcp
-    container: curlimages/curl
-    steps:
-    - script: curl google.com
+steps:
+- script: | 
+    curl nginx
+    curl google.com
+  displayName: Show that nginx is running
 
+
+  
 #steps:
 #- script: |
 #    apt update -y
