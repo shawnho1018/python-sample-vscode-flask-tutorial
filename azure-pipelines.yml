@@ -6,17 +6,28 @@
 trigger:
 - master
 
-pool: GKE-AsiaEast1-Pool
+pool: 
+  GKE-AsiaEast1-Pool
 
-steps:
-- script: |
-    apt update -y
-    apt install -y python3-pip
-    python3 -m pip install --upgrade pip
-    pip install -r requirements.txt
-  displayName: 'Install dependencies'
+stages:
+- stage: Test
+  displayName: Just a test stages
+  jobs:
+  - job: runs_in_container
+    container: ubuntu:16.04
+    steps: 
+    - bash: echo "Hello World"
+    
+#steps:
+#- script: |
+#    apt update -y
+#    apt install -y python3-pip
+#    python3 -m pip install --upgrade pip
+#    pip install -r requirements.txt
+#  displayName: 'Install dependencies'
 
-- script: |
-    pip install pytest pytest-azurepipelines
-    pytest
-  displayName: 'pytest'
+#- script: |
+#    pip install pytest pytest-azurepipelines
+#    pytest
+#  displayName: 'pytest'
+
