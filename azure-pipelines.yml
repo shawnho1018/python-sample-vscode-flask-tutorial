@@ -6,23 +6,13 @@
 trigger:
 - master
 
-resources:
-  containers:
-  - container: my_container
-    image: buildpack-deps:focal
-  - container: nginx
-    image: nginx
-pool: 
-  GKE-AsiaEast1-Pool
-container: my_container
-services:
-  nginx: nginx
+pool:
+  vmImage: 'ubuntu-18.04'
+
+container: ubuntu:18.04
 
 steps:
-- script: | 
-    curl nginx
-    curl google.com
-  displayName: Show that nginx is running
+- script: printenv
 
 
   
