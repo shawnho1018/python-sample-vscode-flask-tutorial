@@ -22,7 +22,6 @@ container: ubuntu1804
 steps:
 - script: printenv
 
-  
 #steps:
 #- script: |
 #    apt update -y
