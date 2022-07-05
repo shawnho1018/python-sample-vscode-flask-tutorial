@@ -17,7 +17,7 @@ resources:
 
 
 pool: 
-  gke
+  Azure Pipelines
 container: ubuntu1804
 steps:
 - script: printenv
