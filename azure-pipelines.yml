@@ -17,7 +17,7 @@ resources:
 
 
 pool: 
-  Default
+  gke
 container: ubuntu1804
 steps:
 - script: printenv
