@@ -11,12 +11,15 @@ resources:
   - container: ubuntu1804
     image: ubuntu:18.04
 
-
-pool: 
-  Default
-container: ubuntu1804
-steps:
-- script: printenv
+stages:
+- stage: test
+  pool: 
+    Default
+  jobs:
+  - job: test
+    container: ubuntu1804
+    steps:
+      - script: printenv
 
 #steps:
 #- script: |
